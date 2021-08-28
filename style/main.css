@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+text-align: center;
+}
+
+body{
+  /* background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  background-position: center;
+  background-repeat: no-repeat; */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+/* #start {
+  ba
+
+} */
+
+.grid-wrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 600px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2)
+}
+
+.grid div{
+  width: calc(100% / 11);
+  height: 10%;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.froggo{
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog.png');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heron {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/167-1673259_flying-bird-png-heron-flying-png.png');
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rock {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/rock.png');
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.car {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/car.png');
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lilypad {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/lily pad.png');
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.car2 {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/car 2.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.frog-catcher {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog catcher.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.fumes {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/fumes.jpeg');
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.squirrel-right {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/squirrel right.png');
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.squirrel-left {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/squirrel to the left.png');
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
