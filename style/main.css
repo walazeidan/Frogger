@@ -4,54 +4,124 @@
 
 h1 {
 text-align: center;
+font-size: 80px;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  margin-top: -10px;
+  font-size: 20px;
 }
 
 body{
-  /* background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  font-family: 'Press Start 2P';
+  /* background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/background.jpeg'); */
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
   background-position: center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
+  background-size:cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
 }
 
-/* #start {
-  ba
+#start {
+  text-align: center;
+  font-family:'Press Start 2P';
+  padding: 20px;
+	display: inline-block;
+  font-weight: bold;
+  background-color: lightgray;
+  text-align: center;
+  font-weight: bold;
+  width: 100px; 
+  border-radius: 20%;
+  margin-left: 100px;
+  margin-top: -200px;
+  cursor:pointer; 
+}
 
-} */
+
+#restart {
+  text-align: center;
+  font-family:'Press Start 2P';
+  padding: 20px 4px;
+	display: inline-block;
+  font-weight: bold;
+  background-color: lightgray;
+  text-align: center;
+  font-weight: bold;
+  width: 100px; 
+  border-radius: 20%;
+  margin-left: 100px;
+  margin-top: -200px;
+  cursor:pointer; 
+  margin-bottom: 60px;
+
+
+}
+
+#button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 5px;
+  cursor: pointer; 
+  
+} 
 
 .grid-wrapper{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin-top: -100px; */
 }
 
 .grid{
-  display: flex;
+  align-items: center;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%);
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    height: 600px;
+    width: 600px;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 50px;
+    margin-top: -50px;
+}
+  /* display: flex;
   flex-wrap: wrap;
   height: 600px;
   width: 600px;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2)
-}
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+  border: 30px solid #693b26;
+  border-radius: 20%;
+  margin-top: -100px; */
+
+
 
 .grid div{
   width: calc(100% / 11);
   height: 10%;
-  border: 1px solid rgba(0,0,0,0.2);
+  /* border: 1px solid rgba(0,0,0,0.2); */
 }
 
-.froggo{
+.frog{
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog.png');
+  /* background-color: teal; */
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .heron {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/167-1673259_flying-bird-png-heron-flying-png.png');
-  background-size: 150%;
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/heron.png');
+  background-size: 400%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -64,23 +134,23 @@ body{
 
 }
 
-.car {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/car.png');
+.boat {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/boats 2.png');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.lilypad {
+/* .lilypad {
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/lily pad.png');
   background-size: 150%;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
-.car2 {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/car 2.png');
-  background-size: 100%;
+.boat2 {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/boat.png');
+  background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -94,22 +164,30 @@ body{
 }
 
 .fumes {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/fumes.jpeg');
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/final_612a43acaa5cef014a0b9e59_958750.png');
+  /* background: transparent; */
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .squirrel-right {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/squirrel right.png');
-  background-size: 120%;
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/RIGHT squirrel.png');
+  background-size: 200%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .squirrel-left {
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/squirrel to the left.png');
-  background-size: 50%;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog.png');
+  background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
 }

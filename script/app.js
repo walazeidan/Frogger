@@ -1,20 +1,18 @@
 function init(){
 
   const grid = document.querySelector('.grid')
-  // const heron = document.querySelectorAll('.heron')
-  // console.log(heron)
+  const h1 = document.querySelector('h1')
+  const h2 = document.querySelector('h2')
+  // const audio = document.getElementById('audio')
   const startButton = document.getElementById('start')
-  const frog = document.querySelectorAll('.froggo')
-  const heronAttack = document.querySelectorAll('.heron')
-  const heronPlacement = [89 , 91 , 93 , 95 , 97 ]
+  const restartButton = document.getElementById('restart')
+  const frogCatcherPlacement = [89 , 91 , 93 , 95 , 97 ]
   let heronShift = 'right'
   const rockPlacement = [77 , 79 , 82 , 85 , 87]
-  const lilypadPlacement = [55 , 56 , 57 , 58 , 59 , 60 , 61 , 62 , 63 , 64 , 65]
-  const frogCatcherPlacement = [33 , 35 , 37 , 39 , 41]
-
+  const heronPlacement = [33 , 35 , 37 , 39 , 41]
+  const homePlacement = [1, 2, 3, 4, 6, 7, 8, 9]
   let frogCatcherShift = 'right'
-  // let carShift = 'right'
-  // const fumesPlacement = [22 , 23 , 24 , 25 , 26 , 27 , 28 , 29 , 30 , 31 , 32]
+
 
   
   
@@ -23,7 +21,7 @@ function init(){
   const width = 11
   const cellCount = width * 10
   const cells = []
-  const className = 'froggo'
+  const className = 'frog'
   const startingPosition = 104
   let currentPosition = startingPosition
   
@@ -74,7 +72,10 @@ function init(){
 
     
     addFrog(currentPosition) 
+    winGame()
+    loseGame()
   }
+
 
   function addHerons() {
     for (let i = 0; i < heronPlacement.length; i++) {
@@ -87,7 +88,6 @@ function init(){
         heron[i].classList.remove('heron')
         if (heronShift === 'right') {
           cells[heronId + 1].classList.add('heron')
-          // console.log(heron + 1)
         } else {
           cells[heronId - 1].classList.add('heron')
         }
@@ -107,37 +107,35 @@ function init(){
     }
   }
 
-  function addCar(){
-    cells[76].classList.add('car')
+  function addBoat(){
+    cells[76].classList.add('boat')
     setInterval(() => {
-      const car = document.querySelectorAll('.car')
-      for (let i = 0; i < 11; i++){
-        const carId = parseFloat(car[i].id)
-        if (carId >= 66) {
-          cells[carId].classList.remove('car')
-          cells[carId - 1].classList.add('car')
+      const boat = document.querySelectorAll('.boat')
+      for (let i = 0; i < 10; i++){
+        const boatId = parseFloat(boat[i].id)
+        if (boatId > 66) {
+          cells[boatId].classList.remove('boat')
+          cells[boatId - 1].classList.add('boat')
+        // } else if (cells[i].classList.contains('boat')){
+        //   cells[boatId].classList.remove('boat')
+        //   cells[boatId + 1].classList.add('boat')
         }
-      } 
-        
+      }
     }, 1000)
-  }
+  } 
 
-  function addLily(){
-    for (let i = 0; i < lilypadPlacement.length; i++) {
-      cells[lilypadPlacement[i]].classList.add('lilypad')
-    }
-  }
 
-  function addCar2(){
-    cells[44].classList.add('car2')
+  function addBoat2(){
+    cells[44].classList.add('boat2')
     setInterval(() => {
-      const car2 = document.querySelectorAll('.car2')
+      const boat2 = document.querySelectorAll('.boat2')
       for (let i = 0; i < 11; i++){
-        const car2Id = parseFloat(car2[i].id)
-        if (car2Id < 54) {
-          cells[car2Id].classList.remove('car2')
-          cells[car2Id + 1].classList.add('car2')
-        }
+        const boat2Id = parseFloat(boat2[i].id)
+        if (boat2Id < 54) {
+          cells[boat2Id].classList.remove('boat2')
+          cells[boat2Id + 1].classList.add('boat2')
+          // cells[car2Id - 1].classList.remove('car2')
+        } 
       } 
       // cells[76].classList.add('car')
         
@@ -156,7 +154,6 @@ function init(){
         frogCatcher[i].classList.remove('frog-catcher')
         if (frogCatcherShift === 'right') {
           cells[frogCatcherId + 1].classList.add('frog-catcher')
-          // console.log(heronId + 1)
         } else {
           cells[frogCatcherId - 1].classList.add('frog-catcher')
         }
@@ -172,11 +169,9 @@ function init(){
 
   function addFumes(){
     cells[22].classList.add('fumes')
-    // const cellAdd = cells[22]
     setInterval(() => {
       const fumes = document.querySelectorAll('.fumes')
-      // const fumesId = parseFloat(fumes[i].id)
-      for (let i = 0; i < 10; i++){
+      for (let i = 0; i < 11; i++){
         const fumesId = parseFloat(fumes[i].id)
         cells[fumesId + 1].classList.add('fumes')
       }
@@ -217,8 +212,37 @@ function init(){
     }, 300)
   }
 
+  function addHome(){
+    for (let i = 0; i < homePlacement.length; i++) {
+      cells[homePlacement[i]].classList.add('home')
+    }
+  }
 
+  // function playMusic() {
+  //   audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/Kevin MacLeod - Pixelland ♫ NO COPYRIGHT 8-bit Music (1).mp3'
+  //   audio.play()
+  // }
 
+  function winGame(){
+    // for (let i = 0; i < 109; i++){
+    if (cells[5].classList.contains('frog')){
+      h1.innerText = 'YOU HAVE WON!'
+      h2.innerText = 'Press Restart to Play Again!'
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }
+
+  function loseGame() {
+    for (let i = 0; i < 109; i++) {
+      if (cells[currentPosition].classList.contains('frog-catcher') || cells[currentPosition].classList.contains('rock') || cells[currentPosition].classList.contains('heron')
+      || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
+      || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
+        h1.innerHTML = 'LOST!'
+        h2.innerText = 'Press Restart to Try Again!'
+        document.removeEventListener('keydown', handleKeyDown)
+      }
+    }
+  }
   
 
 
@@ -226,21 +250,31 @@ function init(){
     startButton.disabled = true
     addHerons()
     addRock()
-    addCar()
-    addLily()
-    addCar2()
+    addBoat()
+    addBoat2()
     addFrogCatcher()
     addFumes()
     addSquirrelRight()
     addSquirrelLeft()
-    
+    addHome()
   }
     
+  function restartGame() {
+    startButton.disabled = false
+    for (let i = 0; i < 109; i++) {
+      if (cells[i].classList.contains('frog')) {
+        cells[i].classList.remove('frog')
+      }
+      addFrog(startingPosition)
+      h1.innerText = 'Frogger'
+      h2.innerText = ''
+    }
+  }
 
     
 
-    
-  
+
+  restartButton.addEventListener('click' ,restartGame)
   startButton.addEventListener('click' , startGame) 
   document.addEventListener('keydown', handleKeyDown)
   createGrid(currentPosition)
