@@ -3,12 +3,12 @@ function init(){
   const grid = document.querySelector('.grid')
   const h1 = document.querySelector('h1')
   const h2 = document.querySelector('h2')
-  // const audio = document.getElementById('audio')
+  const audio = document.getElementById('audio')
   const startButton = document.getElementById('start')
   const restartButton = document.getElementById('restart')
   const frogCatcherPlacement = [89 , 91 , 93 , 95 , 97 ]
   let heronShift = 'right'
-  const rockPlacement = [77 , 79 , 82 , 85 , 87]
+  const rockPlacement = [56, 59, 61, 64, 77 , 79 , 82 , 85 , 87]
   const heronPlacement = [33 , 35 , 37 , 39 , 41]
   const homePlacement = [1, 2, 3, 4, 6, 7, 8, 9]
   let frogCatcherShift = 'right'
@@ -48,7 +48,7 @@ function init(){
   }
 
   function handleKeyDown(event){
-
+    console.log("added the key");
     
     removeFrog(currentPosition)
 
@@ -218,31 +218,40 @@ function init(){
 
   function addHome(){
     for (let i = 0; i < homePlacement.length; i++) {
-      cells[homePlacement[i]].classList.add('home')
+      cells[homePlacement[i]].classList.add('lily-pad')
     }
   }
 
-  // function playMusic() {
-  //   audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/Kevin MacLeod - Pixelland ♫ NO COPYRIGHT 8-bit Music (1).mp3'
-  //   audio.play()
-  // }
+  function playMusic() {
+    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/Kevin MacLeod - Pixelland ♫ NO COPYRIGHT 8-bit Music (1).mp3'
+    audio.play()
+  }
+
+  function losingMusic() {
+    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/losing.wav'
+    audio.play()
+  }
+
+  function winningMusic() {
+    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/winning.wav'
+    audio.play()
+  }
 
   function winGame(){
-    for (let i = 0; i < 109; i++){
-      if (cells[5].classList.contains('frog')){
-        h1.innerText = 'YOU HAVE WON!'
-        h2.innerText = 'Press Restart to Play Again!'
-        document.removeEventListener('keydown', handleKeyDown)
-        cells[i].classList.remove('frog-catcher')
-        cells[i].classList.remove('rock')
-        cells[i].classList.remove('boat')
-        cells[i].classList.remove('boat2')
-        cells[i].classList.remove('heron')
-        cells[i].classList.remove('fumes')
-        cells[i].classList.remove('squirrel-left')
-        cells[i].classList.remove('squirrel-right')
-      }
+    // for (let i = 0; i < 109; i++){
+    if (cells[5].classList.contains('frog')){
+      h1.innerText = 'YOU HAVE WON!'
+      h2.innerText = 'Press Restart to Play Again!'
+      document.removeEventListener('keydown', handleKeyDown)
+      winningMusic()
+      // cells.forEach(item => item.classList.remove('boat'))
+      // cells[i].classList.remove('boat2')
+      // cells[i].classList.remove('heron')
+      // cells[i].classList.remove('fumes')
+      // cells[i].forEach(item => item.classList.remove('squirrel-left'))
+      // cells[i].classList.remove('squirrel-right')
     }
+    
   }
 
   function loseGame() {
@@ -252,8 +261,8 @@ function init(){
       || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
         h1.innerHTML = 'LOST!'
         h2.innerText = 'Press Restart to Try Again!'
-        // document.removeEventListener('keydown', handleKeyDown)
-        
+        document.removeEventListener('keydown', handleKeyDown)
+        losingMusic()
       }
     }
   }
@@ -271,16 +280,18 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
-    // playMusic()
+    playMusic()
   }
     
   function restartGame() {
     // addFrogCatcher()
     for (let i = 0; i < 109; i++) {
       cells[i].classList.remove('frog')
+      console.log("removed");
     }
     cells[104].classList.add('frog')
     h1.innerText = 'Frogger'
+    window.addEventListener('keydown', handleKeyDown)
     h2.innerText = ''
     // addFrogCatcher()
     // addHerons()
