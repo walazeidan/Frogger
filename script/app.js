@@ -108,38 +108,36 @@ function init(){
   }
 
   function addBoat(){
-    cells[76].classList.add('boat')
-    setInterval(() => {
+    const boatStartingPosition = 76
+    let boatIndex = 0
+    let boatInterval = setInterval(boatFunction ,700)
+    function boatFunction() {
       const boat = document.querySelectorAll('.boat')
-      for (let i = 0; i < 10; i++){
-        const boatId = parseFloat(boat[i].id)
-        if (boatId > 66) {
-          cells[boatId].classList.remove('boat')
-          cells[boatId - 1].classList.add('boat')
-        // } else if (cells[i].classList.contains('boat')){
-        //   cells[boatId].classList.remove('boat')
-        //   cells[boatId + 1].classList.add('boat')
-        }
+      cells[boatStartingPosition + boatIndex].classList.add('boat')
+      if ((boatStartingPosition + boatIndex) > 66) {
+        boat.forEach(item => item.classList.remove('boat'))
+        boatIndex--
+      } else {
+        boatIndex = 0
       }
-    }, 1000)
+    }
   } 
 
 
   function addBoat2(){
-    cells[44].classList.add('boat2')
-    setInterval(() => {
+    const boat2StartingPosition = 44
+    let boat2Index = 0
+    let boat2Interval = setInterval(boat2Function ,700)
+    function boat2Function() {
       const boat2 = document.querySelectorAll('.boat2')
-      for (let i = 0; i < 11; i++){
-        const boat2Id = parseFloat(boat2[i].id)
-        if (boat2Id < 54) {
-          cells[boat2Id].classList.remove('boat2')
-          cells[boat2Id + 1].classList.add('boat2')
-          // cells[car2Id - 1].classList.remove('car2')
-        } 
-      } 
-      // cells[76].classList.add('car')
-        
-    }, 1000)
+      cells[boat2StartingPosition + boat2Index].classList.add('boat2')
+      if ((boat2StartingPosition + boat2Index) <= 53) {
+        boat2.forEach(item => item.classList.remove('boat2'))
+        boat2Index++
+      } else {
+        boat2Index = 0
+      }
+    }
   }
 
 
@@ -168,48 +166,54 @@ function init(){
   }
 
   function addFumes(){
-    cells[22].classList.add('fumes')
-    setInterval(() => {
+    const fumesStartingPosition = 22
+    let fumesIndex = 0
+    let fumesInterval = setInterval(fumesFunction ,300)
+    function fumesFunction() {
       const fumes = document.querySelectorAll('.fumes')
-      for (let i = 0; i < 11; i++){
-        const fumesId = parseFloat(fumes[i].id)
-        cells[fumesId + 1].classList.add('fumes')
+      if (fumesIndex < 11){
+        cells[fumesStartingPosition + fumesIndex].classList.add('fumes')
+        fumesIndex++
+      } else {
+        fumes.forEach(item => item.classList.remove('fumes'))
+        fumesIndex = 0
+        
       }
-      for (let i = 0; i < 11; i++){
-        const fumesId = parseFloat(fumes[i].id)
-        cells[fumesId + 1].classList.remove('fumes')
-      }
-    }, 500)
+    }
   }
 
   function addSquirrelRight(){
-    cells[11].classList.add('squirrel-right')
-    setInterval(() => {
+    const squirrelStartingPosition = 11
+    let squirrelIndex = 0
+    let squirrelInterval = setInterval(squirrelRightFunction ,300)
+    function squirrelRightFunction() {
       const squirrelRight = document.querySelectorAll('.squirrel-right')
-      for (let i = 0; i < 5; i++){
-        const squirrelRightId = parseFloat(squirrelRight[i].id)
-        cells[squirrelRightId + 1].classList.add('squirrel-right')
+      if (squirrelIndex < 5){
+        cells[squirrelStartingPosition + squirrelIndex].classList.add('squirrel-right')
+        squirrelIndex++
+      } else {
+        squirrelRight.forEach(item => item.classList.remove('squirrel-right'))
+        squirrelIndex = 0
+        
       }
-      for (let i = 0; i < 5; i++){
-        const squirrelRightId = parseFloat(squirrelRight[i].id)
-        cells[squirrelRightId + 1].classList.remove('squirrel-right')
-      }
-    }, 300)
+    }
   }
 
   function addSquirrelLeft(){
-    cells[21].classList.add('squirrel-left')
-    setInterval(() => {
-      const SquirrelLeft = document.querySelectorAll('.squirrel-left')
-      for (let i = 0; i < 5; i++){
-        const squirrelLeftId = parseFloat(SquirrelLeft[i].id)
-        cells[squirrelLeftId - 1].classList.add('squirrel-left')
+    const squirrelStartingPosition = 21
+    let squirrelIndex = 0
+    let squirrelInterval = setInterval(squirrelLeftFunction ,300)
+    function squirrelLeftFunction() {
+      const squirrelLeft = document.querySelectorAll('.squirrel-left')
+      if (squirrelIndex > -5){
+        cells[squirrelStartingPosition + squirrelIndex].classList.add('squirrel-left')
+        squirrelIndex--
+      } else { 
+        squirrelLeft.forEach(item => item.classList.remove('squirrel-left'))
+        squirrelIndex = 0
+        
       }
-      for (let i = 0; i < 5; i++){
-        const squirrelLeftId = parseFloat(SquirrelLeft[i].id)
-        cells[squirrelLeftId - 1].classList.remove('squirrel-left')
-      }
-    }, 300)
+    }
   }
 
   function addHome(){
@@ -224,11 +228,20 @@ function init(){
   // }
 
   function winGame(){
-    // for (let i = 0; i < 109; i++){
-    if (cells[5].classList.contains('frog')){
-      h1.innerText = 'YOU HAVE WON!'
-      h2.innerText = 'Press Restart to Play Again!'
-      document.removeEventListener('keydown', handleKeyDown)
+    for (let i = 0; i < 109; i++){
+      if (cells[5].classList.contains('frog')){
+        h1.innerText = 'YOU HAVE WON!'
+        h2.innerText = 'Press Restart to Play Again!'
+        document.removeEventListener('keydown', handleKeyDown)
+        cells[i].classList.remove('frog-catcher')
+        cells[i].classList.remove('rock')
+        cells[i].classList.remove('boat')
+        cells[i].classList.remove('boat2')
+        cells[i].classList.remove('heron')
+        cells[i].classList.remove('fumes')
+        cells[i].classList.remove('squirrel-left')
+        cells[i].classList.remove('squirrel-right')
+      }
     }
   }
 
@@ -239,7 +252,8 @@ function init(){
       || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
         h1.innerHTML = 'LOST!'
         h2.innerText = 'Press Restart to Try Again!'
-        document.removeEventListener('keydown', handleKeyDown)
+        // document.removeEventListener('keydown', handleKeyDown)
+        
       }
     }
   }
@@ -257,19 +271,27 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
+    // playMusic()
   }
     
   function restartGame() {
-    startButton.disabled = false
+    // addFrogCatcher()
     for (let i = 0; i < 109; i++) {
-      if (cells[i].classList.contains('frog')) {
-        cells[i].classList.remove('frog')
-      }
-      addFrog(startingPosition)
-      h1.innerText = 'Frogger'
-      h2.innerText = ''
+      cells[i].classList.remove('frog')
     }
+    cells[104].classList.add('frog')
+    h1.innerText = 'Frogger'
+    h2.innerText = ''
+    // addFrogCatcher()
+    // addHerons()
+    // addRock()
+    // addBoat()
+    // addBoat2()
+    // addFumes()
+    // addSquirrelRight()
+    // addSquirrelLeft()
   }
+  
 
     
 

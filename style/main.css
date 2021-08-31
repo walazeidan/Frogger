@@ -17,7 +17,6 @@ h2{
 
 body{
   font-family: 'Press Start 2P';
-  /* background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/background.jpeg'); */
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -44,6 +43,13 @@ body{
   cursor:pointer; 
 }
 
+#start:hover {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+}
+
+#restart:hover {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+}
 
 #restart {
   text-align: center;
@@ -78,7 +84,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: -100px; */
 }
 
 .grid{
@@ -93,27 +98,18 @@ body{
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 50px;
     margin-top: -50px;
+    /* color: rgba(0,0,0,0.1) */
 }
-  /* display: flex;
-  flex-wrap: wrap;
-  height: 600px;
-  width: 600px;
-  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
-  border: 30px solid #693b26;
-  border-radius: 20%;
-  margin-top: -100px; */
 
 
 
 .grid div{
   width: calc(100% / 11);
   height: 10%;
-  /* border: 1px solid rgba(0,0,0,0.2); */
 }
 
 .frog{
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog.png');
-  /* background-color: teal; */
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Fall (32x32).png');
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
@@ -141,13 +137,6 @@ body{
   background-repeat: no-repeat;
 }
 
-/* .lilypad {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/lily pad.png');
-  background-size: 150%;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
-
 .boat2 {
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/boat.png');
   background-size: 120%;
@@ -165,7 +154,6 @@ body{
 
 .fumes {
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/final_612a43acaa5cef014a0b9e59_958750.png');
-  /* background: transparent; */
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
