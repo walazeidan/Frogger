@@ -1,18 +1,16 @@
 function init(){
-  const background = document.querySelector('body')
   const grid = document.querySelector('.grid')
   const h1 = document.querySelector('h1')
   const h2 = document.querySelector('h2')
   const audio = document.getElementById('audio')
   const startButton = document.getElementById('start')
   const restartButton = document.getElementById('restart')
+  const howToPlayButton = document.getElementById('play')
   const frogCatcherPlacement = [89 , 91 , 93 , 95 , 97 ]
   let heronShift = 'right'
   const rockPlacement = [56, 59, 61, 64, 77, 79, 82, 85, 87]
   const heronPlacement = [33 , 35 , 37 , 39 , 41]
   const homePlacement = [1, 2, 3, 4, 6, 7, 8, 9]
-  const boatPlacement = [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76]
-  const boat2 = document.querySelectorAll('.boat2')
   let frogCatcherShift = 'right'
   const gameOver = document.querySelector('.gameover')
 
@@ -166,7 +164,7 @@ function init(){
   function addFumes(){
     const fumesStartingPosition = 22
     let fumesIndex = 0
-    let fumesInterval = setInterval(fumesFunction ,300)
+    let fumesInterval = setInterval(fumesFunction ,600)
     function fumesFunction() {
       const fumes = document.querySelectorAll('.fumes')
       if (fumesIndex < 11){
@@ -252,10 +250,6 @@ function init(){
     
   }
 
-
-
-
-
   function loseGame() {
     if (cells[currentPosition].classList.contains('frog-catcher') || cells[currentPosition].classList.contains('rock') || cells[currentPosition].classList.contains('heron')
     || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
@@ -270,11 +264,11 @@ function init(){
       losingMusic()
     }
   }
-  
-
 
   function startGame() {
     startButton.disabled = true
+    gameOver.classList.remove('show')
+    grid.style.color = 'black'
     addHerons()
     addRock()
     addBoat()
@@ -284,9 +278,9 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
-    // playMusic()
+    playMusic()
   }
-    
+
   function restartGame() {
     removeFrog(currentPosition)
     currentPosition = startingPosition
@@ -298,12 +292,18 @@ function init(){
     grid.style.color = 'black'
     winGame()
     loseGame()
-    // playMusic()
+    playMusic()
   }
 
-    
+  function howToPlay(){
 
+    gameOver.classList.add('show')
+    grid.style.color = 'rgba(0,0,0,0)'
+    gameOver.innerText = 'Press the arrow keys on your keyboard to help Frogger get to the pond across the grid!  Watch out for the obstacles!'
+    gameOver.style.textAlign = 'center'
+  }
 
+  howToPlayButton.addEventListener('click' ,howToPlay)
   restartButton.addEventListener('click' ,restartGame)
   startButton.addEventListener('click' , startGame) 
   document.addEventListener('keydown', handleKeyDown)

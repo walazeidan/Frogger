@@ -51,6 +51,10 @@ body{
   background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
 }
 
+#play:hover {
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+}
+
 #restart {
   text-align: center;
   font-family:'Press Start 2P';
@@ -67,7 +71,31 @@ body{
   cursor:pointer; 
   margin-bottom: 60px;
 
+}
 
+#btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#play {
+  text-align: center;
+  font-family:'Press Start 2P';
+  padding: 20px 4px;
+	display: inline-block;
+  font-weight: bold;
+  background-color: lightgray;
+  text-align: center;
+  font-weight: bold;
+  width: 100px; 
+  border-radius: 20%;
+  margin-top: -210px;
+  cursor:pointer; 
+  margin-bottom: 10px;
+  margin: -50px;
+  margin-left: 100px;
+  cursor:pointer;
 }
 
 #button {
