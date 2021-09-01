@@ -1,5 +1,5 @@
 function init(){
-
+  const background = document.querySelector('body')
   const grid = document.querySelector('.grid')
   const h1 = document.querySelector('h1')
   const h2 = document.querySelector('h2')
@@ -14,6 +14,7 @@ function init(){
   const boatPlacement = [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76]
   const boat2 = document.querySelectorAll('.boat2')
   let frogCatcherShift = 'right'
+  const gameOver = document.querySelector('.gameover')
 
   const width = 11
   const cellCount = width * 10
@@ -21,6 +22,8 @@ function init(){
   const className = 'frog'
   const startingPosition = 104
   let currentPosition = startingPosition
+
+
   
 
 
@@ -208,9 +211,6 @@ function init(){
         squirrelIndex = 0
         
       }
-      if (loseGame === true){
-        clearInterval(squirrelInterval)
-      }
     }
   }
 
@@ -241,13 +241,13 @@ function init(){
       h1.innerText = 'YOU HAVE WON!'
       h2.innerText = 'Press Restart to Play Again!'
       document.removeEventListener('keydown', handleKeyDown)
-      // winningMusic()
-      // cells.forEach(item => item.classList.remove('boat'))
-      // cells[i].classList.remove('boat2')
-      // cells[i].classList.remove('heron')
-      // cells[i].classList.remove('fumes')
-      // cells[i].forEach(item => item.classList.remove('squirrel-left'))
-      // cells[i].classList.remove('squirrel-right')
+      const gameOver = document.querySelector('.gameover')
+      gameOver.classList.add('show')
+      gameOver.innerText = 'Congratulations'
+      grid.style.color = 'rgba(0,0,0,0)'
+      // gameOver.innerText = 'Congratulations'
+      winningMusic()
+      
     }
     
   }
@@ -261,20 +261,13 @@ function init(){
     || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
     || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
       h1.innerHTML = 'LOST!'
+      // gameOver.innerHTML = 'GAME OVER'
       h2.innerText = 'Press Restart to Try Again!'
       document.removeEventListener('keydown', handleKeyDown)
-      cells.forEach(item => item.classList.remove('rock'))
-      cells.forEach(item => item.classList.remove('heron'))
-      cells.forEach(item => item.classList.remove('frog-catcher'))
-      // cells.forEach(item => item.classList.remove('boat'))
-      // cells.forEach(item => item.classList.remove('boat'))
-      // cells.forEach(item => item.classList.remove('squirrel-left'))
-      // cells.forEach(item => item.classList.remove('squirrel-right'))
-      
-      // cells.forEach(item => item.classList.remove('fumes'))
-      
-      
-      
+      const gameOver = document.querySelector('.gameover')
+      gameOver.classList.add('show')
+      grid.style.color = 'rgba(0,0,0,0)'
+      losingMusic()
     }
   }
   
@@ -299,9 +292,13 @@ function init(){
     currentPosition = startingPosition
     addFrog(currentPosition)
     h1.innerText = 'Frogger'
-    h2.innerText = ''
+    // h2.innerText = ''
     document.addEventListener('keydown', handleKeyDown)
-    
+    gameOver.classList.remove('show')
+    grid.style.color = 'black'
+    winGame()
+    loseGame()
+    // playMusic()
   }
 
     

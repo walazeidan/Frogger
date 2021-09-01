@@ -74,7 +74,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 20px;
   cursor: pointer; 
   
 } 
@@ -97,7 +97,7 @@ body{
     width: 600px;
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 50px;
-    margin-top: -50px;
+    margin-top: -30px;
     /* color: rgba(0,0,0,0) */
 }
 
@@ -179,4 +179,30 @@ body{
   background-position: center;
   background-repeat: no-repeat;
 
+}
+
+.gameover {
+    /*box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%);
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.2);*/
+  font-size: 30px;
+  border-radius: 50px;
+  margin-top: -15px; 
+  display: none;
+  position: fixed;
+  top: 200px;
+  left: 400px;
+  width: 650px;
+  height: 560px;
+  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+
+}
+
+.gameover.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
 }
