@@ -8,16 +8,13 @@ function init(){
   const restartButton = document.getElementById('restart')
   const frogCatcherPlacement = [89 , 91 , 93 , 95 , 97 ]
   let heronShift = 'right'
-  const rockPlacement = [56, 59, 61, 64, 77 , 79 , 82 , 85 , 87]
+  const rockPlacement = [56, 59, 61, 64, 77, 79, 82, 85, 87]
   const heronPlacement = [33 , 35 , 37 , 39 , 41]
   const homePlacement = [1, 2, 3, 4, 6, 7, 8, 9]
+  const boatPlacement = [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76]
+  const boat2 = document.querySelectorAll('.boat2')
   let frogCatcherShift = 'right'
 
-
-  
-  
-  
-  
   const width = 11
   const cellCount = width * 10
   const cells = []
@@ -25,7 +22,6 @@ function init(){
   const startingPosition = 104
   let currentPosition = startingPosition
   
-
 
 
   function createGrid(startPos){
@@ -48,7 +44,6 @@ function init(){
   }
 
   function handleKeyDown(event){
-    console.log("added the key");
     
     removeFrog(currentPosition)
 
@@ -213,6 +208,9 @@ function init(){
         squirrelIndex = 0
         
       }
+      if (loseGame === true){
+        clearInterval(squirrelInterval)
+      }
     }
   }
 
@@ -243,7 +241,7 @@ function init(){
       h1.innerText = 'YOU HAVE WON!'
       h2.innerText = 'Press Restart to Play Again!'
       document.removeEventListener('keydown', handleKeyDown)
-      winningMusic()
+      // winningMusic()
       // cells.forEach(item => item.classList.remove('boat'))
       // cells[i].classList.remove('boat2')
       // cells[i].classList.remove('heron')
@@ -254,16 +252,29 @@ function init(){
     
   }
 
+
+
+
+
   function loseGame() {
-    for (let i = 0; i < 109; i++) {
-      if (cells[currentPosition].classList.contains('frog-catcher') || cells[currentPosition].classList.contains('rock') || cells[currentPosition].classList.contains('heron')
-      || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
-      || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
-        h1.innerHTML = 'LOST!'
-        h2.innerText = 'Press Restart to Try Again!'
-        document.removeEventListener('keydown', handleKeyDown)
-        losingMusic()
-      }
+    if (cells[currentPosition].classList.contains('frog-catcher') || cells[currentPosition].classList.contains('rock') || cells[currentPosition].classList.contains('heron')
+    || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
+    || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
+      h1.innerHTML = 'LOST!'
+      h2.innerText = 'Press Restart to Try Again!'
+      document.removeEventListener('keydown', handleKeyDown)
+      cells.forEach(item => item.classList.remove('rock'))
+      cells.forEach(item => item.classList.remove('heron'))
+      cells.forEach(item => item.classList.remove('frog-catcher'))
+      // cells.forEach(item => item.classList.remove('boat'))
+      // cells.forEach(item => item.classList.remove('boat'))
+      // cells.forEach(item => item.classList.remove('squirrel-left'))
+      // cells.forEach(item => item.classList.remove('squirrel-right'))
+      
+      // cells.forEach(item => item.classList.remove('fumes'))
+      
+      
+      
     }
   }
   
@@ -280,29 +291,18 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
-    playMusic()
+    // playMusic()
   }
     
   function restartGame() {
-    // addFrogCatcher()
-    for (let i = 0; i < 109; i++) {
-      cells[i].classList.remove('frog')
-      console.log("removed");
-    }
-    cells[104].classList.add('frog')
+    removeFrog(currentPosition)
+    currentPosition = startingPosition
+    addFrog(currentPosition)
     h1.innerText = 'Frogger'
-    window.addEventListener('keydown', handleKeyDown)
     h2.innerText = ''
-    // addFrogCatcher()
-    // addHerons()
-    // addRock()
-    // addBoat()
-    // addBoat2()
-    // addFumes()
-    // addSquirrelRight()
-    // addSquirrelLeft()
+    document.addEventListener('keydown', handleKeyDown)
+    
   }
-  
 
     
 
