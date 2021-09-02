@@ -93,7 +93,7 @@ function init(){
       } else {
         heronShift = 'right'
       }
-      console.log(heronShift)
+      // console.log(heronShift)
     }, 1000)
   }
 
@@ -109,6 +109,7 @@ function init(){
     let boatInterval = setInterval(boatFunction ,700)
     function boatFunction() {
       const boat = document.querySelectorAll('.boat')
+      console.log('boat ->' ,boatStartingPosition + boatIndex)
       cells[boatStartingPosition + boatIndex].classList.add('boat')
       if ((boatStartingPosition + boatIndex) > 66) {
         boat.forEach(item => item.classList.remove('boat'))
@@ -116,6 +117,7 @@ function init(){
       } else {
         boatIndex = 0
       }
+      console.log('boat message ->' ,boatStartingPosition + boatIndex)
     }
   } 
 
@@ -157,7 +159,7 @@ function init(){
       } else {
         frogCatcherShift = 'right'
       }
-      console.log(frogCatcherShift)
+      // console.log(frogCatcherShift)
     }, 800)
   }
 
@@ -255,11 +257,11 @@ function init(){
     || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
     || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
       h1.innerHTML = 'LOST!'
-      // gameOver.innerHTML = 'GAME OVER'
       h2.innerText = 'Press Restart to Try Again!'
       document.removeEventListener('keydown', handleKeyDown)
       const gameOver = document.querySelector('.gameover')
       gameOver.classList.add('show')
+      gameOver.innerText = 'GAME OVER'
       grid.style.color = 'rgba(0,0,0,0)'
       losingMusic()
     }
@@ -278,7 +280,7 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
-    playMusic()
+    // playMusic()
   }
 
   function restartGame() {
@@ -292,7 +294,7 @@ function init(){
     grid.style.color = 'black'
     winGame()
     loseGame()
-    playMusic()
+    // playMusic()
   }
 
   function howToPlay(){
