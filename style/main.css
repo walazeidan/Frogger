@@ -17,7 +17,7 @@ h2{
 
 body{
   font-family: 'Press Start 2P';
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  background-image: url('../pics/Background.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
@@ -44,15 +44,15 @@ body{
 }
 
 #start:hover {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  background-image: url('../pics/Background.png');
 }
 
 #restart:hover {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  background-image: url('../pics/Background.png');
 }
 
 #play:hover {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
+  background-image: url('../pics/Background.png');
 }
 
 #restart {
@@ -92,7 +92,7 @@ body{
   border-radius: 20%;
   margin-top: -210px;
   cursor:pointer; 
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin: -50px;
   margin-left: 100px;
   cursor:pointer;
@@ -137,21 +137,21 @@ body{
 }
 
 .frog{
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Fall (32x32).png');
+  background-image: url('../pics/Fall (32x32).png');
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .heron {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/heron.png');
+  background-image: url('../pics/heron.png');
   background-size: 400%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .rock {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/rock.png');
+  background-image: url('../pics/rock.png');
   background-size: 150%;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,21 +159,21 @@ body{
 }
 
 .boat {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/boats 2.png');
+  background-image: url('../pics/boats 2.png');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .boat2 {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/boat.png');
+  background-image: url('../pics/boat.png');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .frog-catcher {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/frog catcher.png');
+  background-image: url('../pics/frog catcher.png');
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -181,28 +181,28 @@ body{
 }
 
 .fumes {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/final_612a43acaa5cef014a0b9e59_958750.png');
+  background-image: url('../pics/final_612a43acaa5cef014a0b9e59_958750.png');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .squirrel-right {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/RIGHT squirrel.png');
+  background-image: url('../pics/RIGHT squirrel.png');
   background-size: 200%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .squirrel-left {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/squirrel to the left.png');
+  background-image: url('../pics/squirrel to the left.png');
   background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .lily-pad {
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/lily pad.png');
+  background-image: url('../pics/lily pad.png');
   background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,11 +222,10 @@ body{
   left: 400px;
   width: 650px;
   height: 560px;
-  background-image: url('/Users/walazeidan/Desktop/development/projects/Project-One/pics/Background.png');
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-
-}
+  background-image: url('../pics/Background.png'); 
+  /* background-position: center;
+  background-repeat: no-repeat; */
+  }
 
 .gameover.show {
   display: flex;
