@@ -223,17 +223,17 @@ function init(){
   }
 
   function playMusic() {
-    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/Kevin MacLeod - Pixelland ♫ NO COPYRIGHT 8-bit Music (1).mp3'
+    audio.src = 'music/Kevin MacLeod - Pixelland ♫ NO COPYRIGHT 8-bit Music (1).mp3'
     audio.play()
   }
 
   function losingMusic() {
-    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/losing.wav'
+    audio.src = 'music/losing.wav'
     audio.play()
   }
 
   function winningMusic() {
-    audio.src = '/Users/walazeidan/Desktop/development/projects/Project-One/music/winning.wav'
+    audio.src = 'music/winning.wav'
     audio.play()
   }
 
