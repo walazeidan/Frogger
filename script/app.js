@@ -93,7 +93,6 @@ function init(){
       } else {
         heronShift = 'right'
       }
-      // console.log(heronShift)
     }, 1000)
   }
 
@@ -109,15 +108,16 @@ function init(){
     let boatInterval = setInterval(boatFunction ,700)
     function boatFunction() {
       const boat = document.querySelectorAll('.boat')
-      console.log('boat ->' ,boatStartingPosition + boatIndex)
       cells[boatStartingPosition + boatIndex].classList.add('boat')
-      if ((boatStartingPosition + boatIndex) > 66) {
+      if ((boatStartingPosition + boatIndex) === 66) {
+        boat.forEach(item => item.classList.remove('boat'))
+        boatIndex = 0
+      } else if ((boatStartingPosition + boatIndex) > 66) {
         boat.forEach(item => item.classList.remove('boat'))
         boatIndex--
       } else {
         boatIndex = 0
       }
-      console.log('boat message ->' ,boatStartingPosition + boatIndex)
     }
   } 
 
@@ -129,7 +129,10 @@ function init(){
     function boat2Function() {
       const boat2 = document.querySelectorAll('.boat2')
       cells[boat2StartingPosition + boat2Index].classList.add('boat2')
-      if ((boat2StartingPosition + boat2Index) <= 53) {
+      if ((boat2StartingPosition + boat2Index) === 54) {
+        boat2.forEach(item => item.classList.remove('boat2'))
+        boat2Index = 0
+      } else if ((boat2StartingPosition + boat2Index) < 54) {
         boat2.forEach(item => item.classList.remove('boat2'))
         boat2Index++
       } else {
@@ -159,7 +162,6 @@ function init(){
       } else {
         frogCatcherShift = 'right'
       }
-      // console.log(frogCatcherShift)
     }, 800)
   }
 
@@ -236,16 +238,14 @@ function init(){
   }
 
   function winGame(){
-    // for (let i = 0; i < 109; i++){
     if (cells[5].classList.contains('frog')){
       h1.innerText = 'YOU HAVE WON!'
       h2.innerText = 'Press Restart to Play Again!'
       document.removeEventListener('keydown', handleKeyDown)
       const gameOver = document.querySelector('.gameover')
       gameOver.classList.add('show')
-      gameOver.innerText = 'Congratulations'
+      gameOver.innerText = 'Press Restart to Play Again'
       grid.style.color = 'rgba(0,0,0,0)'
-      // gameOver.innerText = 'Congratulations'
       winningMusic()
       
     }
@@ -256,12 +256,12 @@ function init(){
     if (cells[currentPosition].classList.contains('frog-catcher') || cells[currentPosition].classList.contains('rock') || cells[currentPosition].classList.contains('heron')
     || cells[currentPosition].classList.contains('boat') || cells[currentPosition].classList.contains('boat2') || cells[currentPosition].classList.contains('fumes')
     || cells[currentPosition].classList.contains('squirrel-right') || cells[currentPosition].classList.contains('squirrel-left')){
-      h1.innerHTML = 'LOST!'
+      h1.innerHTML = 'GAME OVER'
       h2.innerText = 'Press Restart to Try Again!'
       document.removeEventListener('keydown', handleKeyDown)
       const gameOver = document.querySelector('.gameover')
       gameOver.classList.add('show')
-      gameOver.innerText = 'GAME OVER'
+      gameOver.innerText = 'Press Restart to Try Again!'
       grid.style.color = 'rgba(0,0,0,0)'
       losingMusic()
     }
@@ -270,7 +270,7 @@ function init(){
   function startGame() {
     startButton.disabled = true
     gameOver.classList.remove('show')
-    grid.style.color = 'black'
+    // grid.style.color = 'black'
     addHerons()
     addRock()
     addBoat()
@@ -280,7 +280,7 @@ function init(){
     addSquirrelRight()
     addSquirrelLeft()
     addHome()
-    // playMusic()
+    playMusic()
   }
 
   function restartGame() {
@@ -291,10 +291,10 @@ function init(){
     // h2.innerText = ''
     document.addEventListener('keydown', handleKeyDown)
     gameOver.classList.remove('show')
-    grid.style.color = 'black'
+    // grid.style.color = 'black'
     winGame()
     loseGame()
-    // playMusic()
+    playMusic()
   }
 
   function howToPlay(){
