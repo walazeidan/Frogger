@@ -67,9 +67,10 @@ body{
   width: 100px; 
   border-radius: 20%;
   margin-left: 100px;
-  margin-top: -200px;
+  /* margin-top: -200px; */
   cursor:pointer; 
   margin-bottom: 60px;
+  margin-top: 26px;
 
 }
 
