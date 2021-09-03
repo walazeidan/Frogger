@@ -269,8 +269,8 @@ function init(){
 
   function startGame() {
     startButton.disabled = true
+    document.addEventListener('keydown', handleKeyDown)
     gameOver.classList.remove('show')
-    // grid.style.color = 'black'
     addHerons()
     addRock()
     addBoat()
@@ -291,7 +291,6 @@ function init(){
     // h2.innerText = ''
     document.addEventListener('keydown', handleKeyDown)
     gameOver.classList.remove('show')
-    // grid.style.color = 'black'
     winGame()
     loseGame()
     playMusic()
@@ -308,7 +307,7 @@ function init(){
   howToPlayButton.addEventListener('click' ,howToPlay)
   restartButton.addEventListener('click' ,restartGame)
   startButton.addEventListener('click' , startGame) 
-  document.addEventListener('keydown', handleKeyDown)
+  // document.addEventListener('keydown', handleKeyDown)
   createGrid(currentPosition)
 }
 
