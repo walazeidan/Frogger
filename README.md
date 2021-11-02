@@ -1,6 +1,6 @@
 # Project-One
 My first dev project for the Software Engineering Immersive course and also my first ever project using JavaScript. We were presented with a list of games to choose from. I chose frogger even though prior to this I had never even heard of it. After a little bit of research, I concluded that this was the perfect level of difficulty to challenge me at my current skill level. 
-<img width="1438" alt="Screenshot 2021-11-02 at 15 19 25" src="https://user-images.githubusercontent.com/87997491/139876179-89e5c320-d90a-4f7b-b90d-c90dc3cbf3af.png">
+<img width="1440" alt="Screenshot 2021-11-02 at 15 49 53" src="https://user-images.githubusercontent.com/87997491/139883617-5c74aa51-fc96-4461-ba78-e71287c4def8.png">
 
 # Goal
 To build a functioning browser grid game using pure Javascript in one week.
