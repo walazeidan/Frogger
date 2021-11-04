@@ -17,6 +17,7 @@ To build a functioning browser grid game using pure Javascript in one week.
 # Approach and Timeline
 __Day 1__ <br />
 I spent the first day planning - considering the functionality I want to implement and dividing it into manageable chunks so as not to get overwhelmed. I eventually decided to split the functionality into 2 sections: MVP and nice-to-haves. The MVP being critical to how the game functions while the nice-to-haves would be considered only if I had time.
+
 __Day 2__ <br />
 I decided that for MVP I wanted a minimum of 8 obstacles. The first row would be the starting position of the player and the final row, should it be reached, would be where the game would be won. With this in mind I set about creating a 10 x 10 grid with the player positioned in the center of the first row. I did this using a for loop to create the div elements, I then pushed these divs to an empty array and appended them to the grid div in my HTML.
 ```
