@@ -1,4 +1,4 @@
-# Project-One
+# Frogger
 My first dev project for the Software Engineering Immersive course and also my first ever project using JavaScript. We were presented with a list of games to choose from. I chose frogger even though prior to this I had never even heard of it. After a little bit of research, I concluded that this was the perfect level of difficulty to challenge me at my current skill level. 
 
 Give it a go [here](https://walazeidan.github.io/Project-One/).
