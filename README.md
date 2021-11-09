@@ -1,4 +1,5 @@
 # Frogger
+# Overview
 My first dev project for the Software Engineering Immersive course and also my first ever project using JavaScript. We were presented with a list of games to choose from. I chose frogger even though prior to this I had never even heard of it. After a little bit of research, I concluded that this was the perfect level of difficulty to challenge me at my current skill level. 
 
 Give it a go [here](https://walazeidan.github.io/Project-One/).
@@ -6,13 +7,13 @@ Give it a go [here](https://walazeidan.github.io/Project-One/).
 <img width="1440" alt="Screenshot 2021-11-02 at 15 49 53" src="https://user-images.githubusercontent.com/87997491/139883617-5c74aa51-fc96-4461-ba78-e71287c4def8.png">
 
 # Goal
-To build a functioning browser grid game using pure Javascript in one week.
+To build a functioning browser grid game using pure JavaScript in one week.
 
 # Technologies used
 * HTML
 * CSS
 * JavaScript
-* Github
+* GitHub
 
 # Approach and Timeline
 __Day 1__ <br />
@@ -145,10 +146,10 @@ __Day 8 - 9__ <br />
 I spent the final days fixing minor errors and styling. I also found a bit of time to make a restart function that allows players, at the press of a button, to restart the game when they win/lose. I also created a button that when pressed displays a panel that tells players how to play the game. One thing that was on my nice-to-have list that I unfortunately didn’t get to make was a timer that ends the game when it reaches 0, making the game a race against the clock.
 
 # Bugs
-Some of the obstacles don’t trigger the lose game function unless the player crashes into it as opposed to when a moving obstacle lands on the same div as the player
+Some of the obstacles don’t trigger the lose game function unless the player crashes into it as opposed to when a moving obstacle lands on the same div as the player.
 
 # Wins and Challenges
-* My biggest win in making this game was the experience I gained in programmatic thinking and the increased understanding of javascript that I gained. 
+* My biggest win in making this game was the experience I gained in programmatic thinking and the increased understanding of javaScript that I gained. 
 * The biggest challenge was in getting the obstacles to move in the way I wanted them to. This took a lot of time, patience and debugging!
 
 # Future Improvements
