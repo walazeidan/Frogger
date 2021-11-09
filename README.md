@@ -149,7 +149,7 @@ I spent the final days fixing minor errors and styling. I also found a bit of ti
 Some of the obstacles don’t trigger the lose game function unless the player crashes into it as opposed to when a moving obstacle lands on the same div as the player.
 
 # Wins and Challenges
-* My biggest win in making this game was the experience I gained in programmatic thinking and the increased understanding of javaScript that I gained. 
+* My biggest win in making this game was the experience I gained in programmatic thinking and the increased understanding of JavaScript that I gained. 
 * The biggest challenge was in getting the obstacles to move in the way I wanted them to. This took a lot of time, patience and debugging!
 
 # Future Improvements
@@ -158,7 +158,7 @@ Some of the obstacles don’t trigger the lose game function unless the player c
 * I wish I had thought to make this game responsive. As this was my first project, I underestimated the importance of creating something that can be viewed/played on mobile devices.
 
 # Key Learning
-This project really helped solidify basic javascript concepts and put into practise what I had been learning for the last 3 weeks. I particularly got a lot of practise in if statements and for loops. 
+This project really helped solidify basic JavaScript concepts and put into practise what I had been learning for the last 3 weeks. I particularly got a lot of practise in if statements and for loops. 
 
 
 
